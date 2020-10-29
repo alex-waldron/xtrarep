@@ -6,6 +6,7 @@ target 'XtraRep' do
   use_frameworks!
 
   # Pods for XtraRep
+  pod 'Firebase/Firestore'
 
 end
 

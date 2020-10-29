@@ -3,10 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D8EDD076DAF95DB3CEA9108 /* Pods_XtraRep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0917406747E7762DC6B1385B /* Pods_XtraRep.framework */; };
+		7288C40A3B502ABB2A8C670F /* Pods_XtraRep_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008B84FDD35A2AD14DD6B58D /* Pods_XtraRep_WatchKit_Extension.framework */; };
+		9D479C5F4952981CF8545298 /* Pods_XtraRep_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D1F0014486BB48B9B9A095 /* Pods_XtraRep_WatchKit_App.framework */; };
+		A521E04D2548DD7700F87B1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */; };
+		A521E04E2548DD7700F87B1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */; };
+		A521E04F2548DD7700F87B1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */; };
+		A521E06B2548F0EE00F87B1D /* ExerciseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A521E06A2548F0EE00F87B1D /* ExerciseDataModel.swift */; };
+		A521E0702548F19200F87B1D /* XYZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = A521E06F2548F19200F87B1D /* XYZ.swift */; };
+		A5245C2425498EDC00AD337F /* WatchBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5245C2325498EDC00AD337F /* WatchBrain.swift */; };
 		A5B7D7D92547B87600D673AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D7D82547B87600D673AD /* AppDelegate.swift */; };
 		A5B7D7DB2547B87600D673AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D7DA2547B87600D673AD /* SceneDelegate.swift */; };
 		A5B7D7DD2547B87600D673AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D7DC2547B87600D673AD /* ViewController.swift */; };
@@ -69,6 +78,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		008B84FDD35A2AD14DD6B58D /* Pods_XtraRep_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XtraRep_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0917406747E7762DC6B1385B /* Pods_XtraRep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XtraRep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10B936462263E7324BEAF6F0 /* Pods-XtraRep WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit App/Pods-XtraRep WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		464FB0E393C11C39243EBC5C /* Pods-XtraRep WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit Extension/Pods-XtraRep WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		5B9DC646F5C47AC4A0F8C706 /* Pods-XtraRep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep.release.xcconfig"; path = "Target Support Files/Pods-XtraRep/Pods-XtraRep.release.xcconfig"; sourceTree = "<group>"; };
+		68D1F0014486BB48B9B9A095 /* Pods_XtraRep_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XtraRep_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7624A47060611782EC936F3F /* Pods-XtraRep WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit Extension/Pods-XtraRep WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		8BF01BCD72D0CC504E5D42D7 /* Pods-XtraRep WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit App/Pods-XtraRep WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A521E06A2548F0EE00F87B1D /* ExerciseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDataModel.swift; sourceTree = "<group>"; };
+		A521E06F2548F19200F87B1D /* XYZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYZ.swift; sourceTree = "<group>"; };
+		A5245C2325498EDC00AD337F /* WatchBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBrain.swift; sourceTree = "<group>"; };
 		A5B7D7D52547B87600D673AD /* XtraRep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XtraRep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B7D7D82547B87600D673AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B7D7DA2547B87600D673AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,13 +112,23 @@
 		A5B7D8082547B87800D673AD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		A5B7D81C2547BC5900D673AD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A5B7D8212547C33500D673AD /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		AC4A038E4342859353A2BCC8 /* Pods-XtraRep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep.debug.xcconfig"; path = "Target Support Files/Pods-XtraRep/Pods-XtraRep.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		20F266D6A04CC68079342B87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D479C5F4952981CF8545298 /* Pods_XtraRep_WatchKit_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A5B7D7D22547B87600D673AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D8EDD076DAF95DB3CEA9108 /* Pods_XtraRep.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,12 +136,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7288C40A3B502ABB2A8C670F /* Pods_XtraRep_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A10BE985896DFC0A473F5247 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0917406747E7762DC6B1385B /* Pods_XtraRep.framework */,
+				68D1F0014486BB48B9B9A095 /* Pods_XtraRep_WatchKit_App.framework */,
+				008B84FDD35A2AD14DD6B58D /* Pods_XtraRep_WatchKit_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5245C1E25498E3300AD337F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5B7D7FD2547B87800D673AD /* InterfaceController.swift */,
+				A5B7D7FF2547B87800D673AD /* ExtensionDelegate.swift */,
+				A5B7D8012547B87800D673AD /* NotificationController.swift */,
+				A5B7D8032547B87800D673AD /* ComplicationController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5245C2225498E4500AD337F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A521E06A2548F0EE00F87B1D /* ExerciseDataModel.swift */,
+				A521E06F2548F19200F87B1D /* XYZ.swift */,
+				A5245C2325498EDC00AD337F /* WatchBrain.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A5B7D7CC2547B87600D673AD = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +181,8 @@
 				A5B7D7ED2547B87700D673AD /* XtraRep WatchKit App */,
 				A5B7D7FC2547B87800D673AD /* XtraRep WatchKit Extension */,
 				A5B7D7D62547B87600D673AD /* Products */,
+				D634FEFBE234A9EE1C05923E /* Pods */,
+				A10BE985896DFC0A473F5247 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +205,7 @@
 				A5B7D7DE2547B87600D673AD /* Main.storyboard */,
 				A5B7D7E12547B87700D673AD /* Assets.xcassets */,
 				A5B7D7E32547B87700D673AD /* LaunchScreen.storyboard */,
+				A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */,
 				A5B7D7E62547B87700D673AD /* Info.plist */,
 			);
 			path = XtraRep;
@@ -158,10 +224,8 @@
 		A5B7D7FC2547B87800D673AD /* XtraRep WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A5B7D7FD2547B87800D673AD /* InterfaceController.swift */,
-				A5B7D7FF2547B87800D673AD /* ExtensionDelegate.swift */,
-				A5B7D8012547B87800D673AD /* NotificationController.swift */,
-				A5B7D8032547B87800D673AD /* ComplicationController.swift */,
+				A5245C2225498E4500AD337F /* Model */,
+				A5245C1E25498E3300AD337F /* Controller */,
 				A5B7D8052547B87800D673AD /* Assets.xcassets */,
 				A5B7D8072547B87800D673AD /* Info.plist */,
 				A5B7D8082547B87800D673AD /* PushNotificationPayload.apns */,
@@ -171,6 +235,19 @@
 			path = "XtraRep WatchKit Extension";
 			sourceTree = "<group>";
 		};
+		D634FEFBE234A9EE1C05923E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC4A038E4342859353A2BCC8 /* Pods-XtraRep.debug.xcconfig */,
+				5B9DC646F5C47AC4A0F8C706 /* Pods-XtraRep.release.xcconfig */,
+				8BF01BCD72D0CC504E5D42D7 /* Pods-XtraRep WatchKit App.debug.xcconfig */,
+				10B936462263E7324BEAF6F0 /* Pods-XtraRep WatchKit App.release.xcconfig */,
+				464FB0E393C11C39243EBC5C /* Pods-XtraRep WatchKit Extension.debug.xcconfig */,
+				7624A47060611782EC936F3F /* Pods-XtraRep WatchKit Extension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,10 +255,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5B7D8132547B87800D673AD /* Build configuration list for PBXNativeTarget "XtraRep" */;
 			buildPhases = (
+				6F0BE92DC45A291A7DC4EFEC /* [CP] Check Pods Manifest.lock */,
 				A5B7D7D12547B87600D673AD /* Sources */,
 				A5B7D7D22547B87600D673AD /* Frameworks */,
 				A5B7D7D32547B87600D673AD /* Resources */,
 				A5B7D8122547B87800D673AD /* Embed Watch Content */,
+				7F7AF386E92AE37F9FC253BA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,8 +276,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5B7D80F2547B87800D673AD /* Build configuration list for PBXNativeTarget "XtraRep WatchKit App" */;
 			buildPhases = (
+				376EF0FD064A22858F96FDB4 /* [CP] Check Pods Manifest.lock */,
 				A5B7D7E72547B87700D673AD /* Resources */,
 				A5B7D80E2547B87800D673AD /* Embed App Extensions */,
+				20F266D6A04CC68079342B87 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,6 +295,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5B7D80B2547B87800D673AD /* Build configuration list for PBXNativeTarget "XtraRep WatchKit Extension" */;
 			buildPhases = (
+				5BA3EEE9C22A24BDDF5DB902 /* [CP] Check Pods Manifest.lock */,
 				A5B7D7F42547B87800D673AD /* Sources */,
 				A5B7D7F52547B87800D673AD /* Frameworks */,
 				A5B7D7F62547B87800D673AD /* Resources */,
@@ -273,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5B7D7E52547B87700D673AD /* LaunchScreen.storyboard in Resources */,
+				A521E04D2548DD7700F87B1D /* GoogleService-Info.plist in Resources */,
 				A5B7D7E22547B87700D673AD /* Assets.xcassets in Resources */,
 				A5B7D7E02547B87600D673AD /* Main.storyboard in Resources */,
 			);
@@ -284,6 +367,7 @@
 			files = (
 				A5B7D7F22547B87700D673AD /* Assets.xcassets in Resources */,
 				A5B7D7F02547B87700D673AD /* Interface.storyboard in Resources */,
+				A521E04E2548DD7700F87B1D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,10 +376,97 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5B7D8062547B87800D673AD /* Assets.xcassets in Resources */,
+				A521E04F2548DD7700F87B1D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		376EF0FD064A22858F96FDB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XtraRep WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BA3EEE9C22A24BDDF5DB902 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XtraRep WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F0BE92DC45A291A7DC4EFEC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XtraRep-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F7AF386E92AE37F9FC253BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XtraRep/Pods-XtraRep-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XtraRep/Pods-XtraRep-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XtraRep/Pods-XtraRep-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A5B7D7D12547B87600D673AD /* Sources */ = {
@@ -312,12 +483,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5245C2425498EDC00AD337F /* WatchBrain.swift in Sources */,
 				A5B7D81D2547BC5900D673AD /* Constants.swift in Sources */,
 				A5B7D8222547C33500D673AD /* Colors.swift in Sources */,
 				A5B7D8022547B87800D673AD /* NotificationController.swift in Sources */,
 				A5B7D8042547B87800D673AD /* ComplicationController.swift in Sources */,
+				A521E06B2548F0EE00F87B1D /* ExerciseDataModel.swift in Sources */,
 				A5B7D8002547B87800D673AD /* ExtensionDelegate.swift in Sources */,
 				A5B7D7FE2547B87800D673AD /* InterfaceController.swift in Sources */,
+				A521E0702548F19200F87B1D /* XYZ.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +651,7 @@
 		};
 		A5B7D80C2547B87800D673AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 464FB0E393C11C39243EBC5C /* Pods-XtraRep WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -499,6 +674,7 @@
 		};
 		A5B7D80D2547B87800D673AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7624A47060611782EC936F3F /* Pods-XtraRep WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -522,6 +698,7 @@
 		};
 		A5B7D8102547B87800D673AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BF01BCD72D0CC504E5D42D7 /* Pods-XtraRep WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -542,6 +719,7 @@
 		};
 		A5B7D8112547B87800D673AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10B936462263E7324BEAF6F0 /* Pods-XtraRep WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -563,6 +741,7 @@
 		};
 		A5B7D8142547B87800D673AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC4A038E4342859353A2BCC8 /* Pods-XtraRep.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -585,6 +764,7 @@
 		};
 		A5B7D8152547B87800D673AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B9DC646F5C47AC4A0F8C706 /* Pods-XtraRep.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

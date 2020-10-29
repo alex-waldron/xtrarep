@@ -6,13 +6,15 @@
 //
 
 import UIKit
-
+import Firebase
 class ViewController: UIViewController {
-
+    var ref: DocumentReference? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    
 
 
 }

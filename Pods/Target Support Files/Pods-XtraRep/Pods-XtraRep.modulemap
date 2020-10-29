@@ -1,0 +1,6 @@
+framework module Pods_XtraRep {
+  umbrella header "Pods-XtraRep-umbrella.h"
+
+  export *
+  module * { export * }
+}

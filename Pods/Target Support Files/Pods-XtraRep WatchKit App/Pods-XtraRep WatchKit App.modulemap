@@ -1,0 +1,6 @@
+framework module Pods_XtraRep_WatchKit_App {
+  umbrella header "Pods-XtraRep WatchKit App-umbrella.h"
+
+  export *
+  module * { export * }
+}

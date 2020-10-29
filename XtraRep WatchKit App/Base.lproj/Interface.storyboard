@@ -13,13 +13,22 @@
                     <items>
                         <label alignment="left" text="Collect Data" id="5MZ-f7-qJ1"/>
                         <button width="1" alignment="left" title="Start" id="a4R-4F-6wv">
+                            <color key="backgroundColor" red="0.0" green="0.76182878519999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="buttonPressed" destination="AgC-eL-Hgc" id="EYc-XN-HJa"/>
                             </connections>
                         </button>
+                        <label alignment="left" text="Exercise" id="MgJ-42-fGt"/>
+                        <textField width="1" alignment="left" placeholder="Exercise Type" id="VcG-b5-qSe">
+                            <connections>
+                                <action selector="textField:" destination="AgC-eL-Hgc" id="000-Wo-v87"/>
+                            </connections>
+                        </textField>
                     </items>
                     <connections>
-                        <outlet property="startStopButton" destination="a4R-4F-6wv" id="McJ-eA-3er"/>
+                        <outlet property="exerciseLabel" destination="MgJ-42-fGt" id="2Yc-gW-Wp3"/>
+                        <outlet property="exerciseTypeField" destination="VcG-b5-qSe" id="Ptb-RQ-IBa"/>
+                        <outlet property="startStopButton" destination="a4R-4F-6wv" id="XCz-Sy-Xqn"/>
                     </connections>
                 </controller>
             </objects>
