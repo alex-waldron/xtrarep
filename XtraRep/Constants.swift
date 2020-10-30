@@ -1,9 +1,12 @@
 //
 //  Constants.swift
-//  XtraRep WatchKit Extension
+//  XtraRep
 //
-//  Created by Alex Waldron on 10/26/20.
+//  Created by Alex Waldron on 10/30/20.
 //
+
+import Foundation
+
 struct K{
     static let start = "Start"
     static let stop = "Stop"
@@ -12,5 +15,3 @@ struct K{
         static let accelKey = "accelData"
     }
 }
-
-

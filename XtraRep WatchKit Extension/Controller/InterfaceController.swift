@@ -8,6 +8,8 @@
 import WatchKit
 import Foundation
 import CoreMotion
+import WatchConnectivity
+
 
 class InterfaceController: WKInterfaceController {
     //intialize var to hold button state
@@ -22,7 +24,10 @@ class InterfaceController: WKInterfaceController {
     //init logic controller "WatchBrain.swift"
     var watchBrain = WatchBrain()
     
-    
+    //init watch connectivity
+    var wcSession: WCSession!
+
+
     //Outlet for exercise label to change color when user forgets to input
     @IBOutlet weak var exerciseLabel: WKInterfaceLabel!
     
@@ -44,7 +49,7 @@ class InterfaceController: WKInterfaceController {
     //func that comes with WachKit
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
-        
+        super.awake(withContext: context)
         //Programitically set button color to green
         self.startStopButton.setBackgroundColor(Colors.buttonGreen)
     }
@@ -53,6 +58,13 @@ class InterfaceController: WKInterfaceController {
     //func comes with WatchKit ... No idea what this shit does
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+        
+        wcSession = WCSession.default
+        wcSession.delegate = self
+        wcSession.activate()
+        
+        
     }
     
     
@@ -73,7 +85,7 @@ class InterfaceController: WKInterfaceController {
                 
                 //if the text field has some sort of text in it,
                 //check to see if the accelerometer is available
-                if motionManager.isAccelerometerAvailable{
+                if true/*motionManager.isAccelerometerAvailable*/{
                     
                     //if accell is available, start getting data from it
                     watchBrain.startCollectingData(exerciseName: exerciseType!, motionManager: motionManager)
@@ -96,8 +108,11 @@ class InterfaceController: WKInterfaceController {
         } else {
             //button state is stop
             
+            motionManager.stopAccelerometerUpdates()
             //get data received from last exercise
-            var lastSetData = watchBrain.getExerciseData()
+            let lastSetData = watchBrain.getExerciseData()
+            
+            print(lastSetData)
             
             //clear text field and get ready for next exercise input
             resetScreen()
@@ -110,6 +125,10 @@ class InterfaceController: WKInterfaceController {
             
         }
     }
+    
+    
+    
+    //MARK: - FUNCTIONS
     
     func resetScreen() {
         
@@ -155,4 +174,22 @@ class InterfaceController: WKInterfaceController {
         //change button background to green
         startStopButton.setBackgroundColor(Colors.buttonGreen)
     }
+}
+
+//MARK: - WCSessionDelegate
+
+extension InterfaceController: WCSessionDelegate{
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        //dont do anything
+    }
+    func session(_ session: WCSession, didReceiveMessage message: [String: Any]){
+        exerciseTypeField.setText(message["exerciseType"] as? String)
+    }
+
+    /*func sendMessageToIOS(){
+        wcSession.sendMessage(<#T##message: [String : Any]##[String : Any]#>, replyHandler: <#T##(([String : Any]) -> Void)?##(([String : Any]) -> Void)?##([String : Any]) -> Void#>, errorHandler: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
+    }*/
+    
+    
+    
 }
