@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import WatchConnectivity
 class ViewController: UIViewController {
+    let db = Firestore.firestore()
     var ref: DocumentReference? = nil
     var exerciseData: [String:Any]? = nil
     var wcSession: WCSession! = nil
@@ -21,15 +22,35 @@ class ViewController: UIViewController {
             wcSession = WCSession.default
             wcSession.delegate = self
             wcSession.activate()
+            print("WCsession set up properly")
+            
         }
     }
     @IBAction func sendNameToWatch(_ sender: UIButton) {
         if let exerciseType = exerciseTypeTextField.text{
+            print(wcSession.isReachable)
+            print(exerciseType)
             let message = ["exerciseType": exerciseType]
+            print(message)
             wcSession.sendMessage(message, replyHandler: nil, errorHandler: {(error) in
+                print(error)
                 print(error.localizedDescription)
             })
         }
+    }
+    @IBAction func pushToFirebase(_ sender: UIButton) {
+
+        db.collection("xtrarep").addDocument(data: exerciseData!, completion: {(error) in
+                if let e = error {
+                    print("there was an issue adding data to fire store \(e)")
+                } else{
+                    print("SUCCESS")
+                }
+            }
+                
+        )
+        
+    
     }
     
 }
@@ -41,6 +62,10 @@ extension ViewController: WCSessionDelegate{
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         exerciseData = message
+        print("I got the message")
+        print(message)
+        
+        //push to firebase
         
     }
     

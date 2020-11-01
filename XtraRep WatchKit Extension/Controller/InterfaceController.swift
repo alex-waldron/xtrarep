@@ -26,8 +26,8 @@ class InterfaceController: WKInterfaceController {
     
     //init watch connectivity
     var wcSession: WCSession!
-
-
+    
+    
     //Outlet for exercise label to change color when user forgets to input
     @IBOutlet weak var exerciseLabel: WKInterfaceLabel!
     
@@ -111,8 +111,13 @@ class InterfaceController: WKInterfaceController {
             motionManager.stopAccelerometerUpdates()
             //get data received from last exercise
             let lastSetData = watchBrain.getExerciseData()
-            
-            print(lastSetData)
+            print(wcSession.isReachable)
+            wcSession.sendMessage(lastSetData!.data, replyHandler: nil) { (error) in
+                
+                print(error.localizedDescription)
+                
+            }
+            print(lastSetData?.data)
             
             //clear text field and get ready for next exercise input
             resetScreen()
@@ -183,12 +188,14 @@ extension InterfaceController: WCSessionDelegate{
         //dont do anything
     }
     func session(_ session: WCSession, didReceiveMessage message: [String: Any]){
+        print(message["exerciseType"])
+        print("hello")
         exerciseTypeField.setText(message["exerciseType"] as? String)
     }
-
+    
     /*func sendMessageToIOS(){
-        wcSession.sendMessage(<#T##message: [String : Any]##[String : Any]#>, replyHandler: <#T##(([String : Any]) -> Void)?##(([String : Any]) -> Void)?##([String : Any]) -> Void#>, errorHandler: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
-    }*/
+     wcSession.sendMessage(<#T##message: [String : Any]##[String : Any]#>, replyHandler: <#T##(([String : Any]) -> Void)?##(([String : Any]) -> Void)?##([String : Any]) -> Void#>, errorHandler: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
+     }*/
     
     
     
