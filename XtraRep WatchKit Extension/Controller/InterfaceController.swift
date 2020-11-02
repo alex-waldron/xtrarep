@@ -112,6 +112,7 @@ class InterfaceController: WKInterfaceController {
             motionManager.stopAccelerometerUpdates()
             //get data received from last exercise
             let lastSetData = watchBrain.getExerciseData()
+            watchBrain.resetExerciseData()   
             let lastSetDict = [
                 "exerciseType": lastSetData?.exerciseType! as Any,
                 "accelData" : lastSetData?.accelData as Any

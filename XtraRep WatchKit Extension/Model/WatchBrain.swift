@@ -8,17 +8,16 @@
 import Foundation
 import CoreMotion
 
-struct WatchBrain{
-    var globalExerciseData:ExerciseDataModel?
-    mutating func startCollectingData(exerciseName: String, motionManager: CMMotionManager){
-        var exerciseData:ExerciseDataModel?
+class WatchBrain{
+    var exerciseData:ExerciseDataModel = ExerciseDataModel(exerciseType: nil, accelData: [])
+    func startCollectingData(exerciseName: String, motionManager: CMMotionManager){
         print("Start collecting data")
-        
+        var count = 0
         //setup data model
-        exerciseData = ExerciseDataModel(exerciseType: exerciseName, accelData: [])
+        exerciseData.exerciseType = exerciseName
         
-        //Update interval frequency = 5 Hz
-        motionManager.accelerometerUpdateInterval = 1.0/5.0
+        //Update interval frequency = 20 Hz
+        motionManager.accelerometerUpdateInterval = 1.0/20.0
         
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler: {(data, error) in
             //TEST
@@ -30,8 +29,10 @@ struct WatchBrain{
              //TRUE FUNCTIONALLITY
              
             if let data = data{
-                
-                exerciseData?.accelData.append(["x": data.acceleration.x, "y": data.acceleration.y, "z": data.acceleration.z])
+                print(data.acceleration.x)
+                count += 1
+                print(count)
+                self.exerciseData.accelData.append(["x": data.acceleration.x, "y": data.acceleration.y, "z": data.acceleration.z])
                 
                 
             } else{
@@ -47,10 +48,13 @@ struct WatchBrain{
         )
         
         
-        globalExerciseData = exerciseData
     }
     
     func getExerciseData() -> ExerciseDataModel? {
-        return globalExerciseData
+        
+        return exerciseData
+    }
+    func resetExerciseData(){
+        exerciseData = ExerciseDataModel(exerciseType: nil, accelData: [])
     }
 }
