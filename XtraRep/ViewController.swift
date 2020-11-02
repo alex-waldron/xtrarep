@@ -12,6 +12,14 @@ class ViewController: UIViewController {
     let db = Firestore.firestore()
     var ref: DocumentReference? = nil
     var exerciseData: [String:Any]? = nil
+    /*var exerciseData: [String:Any]? = [
+        "exercise": "benchPress",
+        "accelData": [
+            ["x":1,"y":2,"z":3],
+            ["x":1,"y":2,"z":3],
+            ["x":1,"y":2,"z":3]
+        ]
+    ]*/
     var wcSession: WCSession! = nil
     @IBOutlet weak var exerciseTypeTextField: UITextField!
     override func viewDidLoad() {
@@ -39,8 +47,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func pushToFirebase(_ sender: UIButton) {
-
-        db.collection("xtrarep").addDocument(data: exerciseData!, completion: {(error) in
+        db.collection(exerciseData?["exercise"] as! String).addDocument(data: exerciseData!, completion: {(error) in
                 if let e = error {
                     print("there was an issue adding data to fire store \(e)")
                 } else{
@@ -61,11 +68,21 @@ extension ViewController: WCSessionDelegate{
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        //can just use message but ima keep this line for now
         exerciseData = message
         print("I got the message")
         print(message)
         
         //push to firebase
+        db.collection(exerciseData?["exerciseType"] as! String).addDocument(data: exerciseData!, completion: {(error) in
+                if let e = error {
+                    print("there was an issue adding data to fire store \(e)")
+                } else{
+                    print("SUCCESS")
+                }
+            }
+                
+        )
         
     }
     

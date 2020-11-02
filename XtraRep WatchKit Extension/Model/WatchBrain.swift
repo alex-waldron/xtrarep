@@ -15,25 +15,24 @@ struct WatchBrain{
         print("Start collecting data")
         
         //setup data model
-        exerciseData = ExerciseDataModel()
+        exerciseData = ExerciseDataModel(exerciseType: exerciseName, accelData: [])
         
-        exerciseData?.data[K.dataDict.exerciseKey] = exerciseName
         //Update interval frequency = 5 Hz
         motionManager.accelerometerUpdateInterval = 1.0/5.0
         
         motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler: {(data, error) in
             //TEST
-            var accelData = exerciseData!.data[K.dataDict.accelKey] as! [Any]
-            accelData.append(XYZ(x: 1, y: 2, z: 3))
+            //var accelData = exerciseData!.data[K.dataDict.accelKey] as! [Any]
             
             
-            /*
-             TRUE FUNCTIONALLITY
+            
+            
+             //TRUE FUNCTIONALLITY
              
-            if let data = data, let exerciseData = exerciseData{
-                if var accelData = exerciseData.data[K.dataDict.accelKey] as! [Any]?{
-                    accelData.append(XYZ(x: data.acceleration.x, y: data.acceleration.y, z: data.acceleration.z))
-                }
+            if let data = data{
+                
+                exerciseData?.accelData.append(["x": data.acceleration.x, "y": data.acceleration.y, "z": data.acceleration.z])
+                
                 
             } else{
                 if let e = error {
@@ -42,7 +41,7 @@ struct WatchBrain{
                     print("exerciseData is empty")
                 }
             }
- */
+ 
         }
  
         )

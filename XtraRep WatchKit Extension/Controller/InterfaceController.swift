@@ -27,6 +27,7 @@ class InterfaceController: WKInterfaceController {
     //init watch connectivity
     var wcSession: WCSession!
     
+    let encoder = JSONEncoder()
     
     //Outlet for exercise label to change color when user forgets to input
     @IBOutlet weak var exerciseLabel: WKInterfaceLabel!
@@ -85,7 +86,7 @@ class InterfaceController: WKInterfaceController {
                 
                 //if the text field has some sort of text in it,
                 //check to see if the accelerometer is available
-                if true/*motionManager.isAccelerometerAvailable*/{
+                if motionManager.isAccelerometerAvailable{
                     
                     //if accell is available, start getting data from it
                     watchBrain.startCollectingData(exerciseName: exerciseType!, motionManager: motionManager)
@@ -111,13 +112,19 @@ class InterfaceController: WKInterfaceController {
             motionManager.stopAccelerometerUpdates()
             //get data received from last exercise
             let lastSetData = watchBrain.getExerciseData()
+            let lastSetDict = [
+                "exerciseType": lastSetData?.exerciseType! as Any,
+                "accelData" : lastSetData?.accelData as Any
+            ] as [String : Any]
+            
             print(wcSession.isReachable)
-            wcSession.sendMessage(lastSetData!.data, replyHandler: nil) { (error) in
+            wcSession.sendMessage(lastSetDict, replyHandler: nil) { (error) in
                 
                 print(error.localizedDescription)
                 
             }
-            print(lastSetData?.data)
+ 
+            
             
             //clear text field and get ready for next exercise input
             resetScreen()

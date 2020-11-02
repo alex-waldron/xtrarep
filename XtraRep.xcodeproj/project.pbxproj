@@ -10,13 +10,11 @@
 		6D8EDD076DAF95DB3CEA9108 /* Pods_XtraRep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0917406747E7762DC6B1385B /* Pods_XtraRep.framework */; };
 		7288C40A3B502ABB2A8C670F /* Pods_XtraRep_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008B84FDD35A2AD14DD6B58D /* Pods_XtraRep_WatchKit_Extension.framework */; };
 		9D479C5F4952981CF8545298 /* Pods_XtraRep_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D1F0014486BB48B9B9A095 /* Pods_XtraRep_WatchKit_App.framework */; };
-		A503C1B3254C45D200654200 /* XYZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = A503C1B2254C45D200654200 /* XYZ.swift */; };
 		A503C1C2254C476700654200 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A503C1C1254C476700654200 /* Constants.swift */; };
 		A521E04D2548DD7700F87B1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */; };
 		A521E04E2548DD7700F87B1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */; };
 		A521E04F2548DD7700F87B1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */; };
 		A521E06B2548F0EE00F87B1D /* ExerciseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A521E06A2548F0EE00F87B1D /* ExerciseDataModel.swift */; };
-		A521E0702548F19200F87B1D /* XYZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = A521E06F2548F19200F87B1D /* XYZ.swift */; };
 		A5245C2425498EDC00AD337F /* WatchBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5245C2325498EDC00AD337F /* WatchBrain.swift */; };
 		A5B7D7D92547B87600D673AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D7D82547B87600D673AD /* AppDelegate.swift */; };
 		A5B7D7DB2547B87600D673AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D7DA2547B87600D673AD /* SceneDelegate.swift */; };
@@ -88,12 +86,10 @@
 		68D1F0014486BB48B9B9A095 /* Pods_XtraRep_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XtraRep_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7624A47060611782EC936F3F /* Pods-XtraRep WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit Extension/Pods-XtraRep WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		8BF01BCD72D0CC504E5D42D7 /* Pods-XtraRep WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit App/Pods-XtraRep WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
-		A503C1B2254C45D200654200 /* XYZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYZ.swift; sourceTree = "<group>"; };
 		A503C1BA254C468400654200 /* XtraRep WatchKit App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XtraRep WatchKit App-Bridging-Header.h"; sourceTree = "<group>"; };
 		A503C1C1254C476700654200 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A521E06A2548F0EE00F87B1D /* ExerciseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDataModel.swift; sourceTree = "<group>"; };
-		A521E06F2548F19200F87B1D /* XYZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYZ.swift; sourceTree = "<group>"; };
 		A5245C2325498EDC00AD337F /* WatchBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchBrain.swift; sourceTree = "<group>"; };
 		A5B7D7D52547B87600D673AD /* XtraRep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XtraRep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B7D7D82547B87600D673AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				A521E06A2548F0EE00F87B1D /* ExerciseDataModel.swift */,
-				A521E06F2548F19200F87B1D /* XYZ.swift */,
 				A5245C2325498EDC00AD337F /* WatchBrain.swift */,
 			);
 			path = Model;
@@ -212,7 +207,6 @@
 				A5B7D7E32547B87700D673AD /* LaunchScreen.storyboard */,
 				A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */,
 				A5B7D7E62547B87700D673AD /* Info.plist */,
-				A503C1B2254C45D200654200 /* XYZ.swift */,
 				A503C1C1254C476700654200 /* Constants.swift */,
 			);
 			path = XtraRep;
@@ -486,7 +480,6 @@
 				A5B7D7DD2547B87600D673AD /* ViewController.swift in Sources */,
 				A5B7D7D92547B87600D673AD /* AppDelegate.swift in Sources */,
 				A5B7D7DB2547B87600D673AD /* SceneDelegate.swift in Sources */,
-				A503C1B3254C45D200654200 /* XYZ.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,7 +495,6 @@
 				A521E06B2548F0EE00F87B1D /* ExerciseDataModel.swift in Sources */,
 				A5B7D8002547B87800D673AD /* ExtensionDelegate.swift in Sources */,
 				A5B7D7FE2547B87800D673AD /* InterfaceController.swift in Sources */,
-				A521E0702548F19200F87B1D /* XYZ.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

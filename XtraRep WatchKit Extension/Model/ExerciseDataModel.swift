@@ -8,10 +8,12 @@
 import Foundation
 
 
-struct ExerciseDataModel {
-    var data: [String:Any?] = [
+struct ExerciseDataModel: Encodable {
+    var exerciseType:String?
+    var accelData: [[String:Double]]
+    /*var data: [String:Any?] = [
         "exercise": nil,
-        "accelData": [XYZ(x: 1, y: 2, z: 3),XYZ(x: 1, y: 2, z: 3),XYZ(x: 1, y: 2, z: 3),XYZ(x: 1, y: 2, z: 3),XYZ(x: 1, y: 2, z: 3)]
+        "accelData": [String?:Double?]
         
-    ]
+    ]*/
 }
