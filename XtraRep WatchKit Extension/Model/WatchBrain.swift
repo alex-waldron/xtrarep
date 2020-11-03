@@ -9,7 +9,7 @@ import Foundation
 import CoreMotion
 
 class WatchBrain{
-    var exerciseData:ExerciseDataModel = ExerciseDataModel(exerciseType: nil, accelData: [])
+    var exerciseData:ExerciseDataModel = ExerciseDataModel(exerciseType: nil, accelData: [], gravityData: [], rotationData: [], attitudeData: [])
     func startCollectingData(exerciseName: String, motionManager: CMMotionManager){
         print("Start collecting data")
         var count = 0
@@ -17,22 +17,26 @@ class WatchBrain{
         exerciseData.exerciseType = exerciseName
         
         //Update interval frequency = 20 Hz
-        motionManager.accelerometerUpdateInterval = 1.0/20.0
-        
-        motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler: {(data, error) in
+        motionManager.deviceMotionUpdateInterval = 1.0/20.0
+        motionManager.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(data, error) in
             //TEST
             //var accelData = exerciseData!.data[K.dataDict.accelKey] as! [Any]
-            
+            if error != nil {
+                print("encountered error : \(error!)")
+            }
             
             
             
              //TRUE FUNCTIONALLITY
              
             if let data = data{
-                print(data.acceleration.x)
+                
                 count += 1
                 print(count)
-                self.exerciseData.accelData.append(["x": data.acceleration.x, "y": data.acceleration.y, "z": data.acceleration.z])
+                self.exerciseData.accelData.append(["x": data.userAcceleration.x, "y": data.userAcceleration.y, "z": data.userAcceleration.z])
+                self.exerciseData.gravityData.append(["x": data.gravity.x, "y": data.gravity.y, "z": data.gravity.z])
+                self.exerciseData.attitudeData.append(["roll": data.attitude.roll, "pitch":data.attitude.pitch, "yaw":data.attitude.yaw])
+                self.exerciseData.rotationData.append(["x": data.rotationRate.x, "y": data.rotationRate.y, "z": data.rotationRate.z])
                 
                 
             } else{
@@ -55,6 +59,6 @@ class WatchBrain{
         return exerciseData
     }
     func resetExerciseData(){
-        exerciseData = ExerciseDataModel(exerciseType: nil, accelData: [])
+        exerciseData = ExerciseDataModel(exerciseType: nil, accelData: [], gravityData: [], rotationData: [], attitudeData: [])
     }
 }

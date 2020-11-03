@@ -115,7 +115,10 @@ class InterfaceController: WKInterfaceController {
             watchBrain.resetExerciseData()   
             let lastSetDict = [
                 "exerciseType": lastSetData?.exerciseType! as Any,
-                "accelData" : lastSetData?.accelData as Any
+                "accelData" : lastSetData?.accelData as Any,
+                "gravityData": lastSetData?.gravityData as Any,
+                "attitudeData":lastSetData?.attitudeData as Any,
+                "rotationData":lastSetData?.rotationData as Any
             ] as [String : Any]
             
             print(wcSession.isReachable)

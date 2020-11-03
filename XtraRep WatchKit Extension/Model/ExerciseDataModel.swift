@@ -11,6 +11,9 @@ import Foundation
 struct ExerciseDataModel: Encodable {
     var exerciseType:String?
     var accelData: [[String:Double]]
+    var gravityData: [[String:Double]]
+    var rotationData: [[String:Double]]
+    var attitudeData: [[String:Double]]
     /*var data: [String:Any?] = [
         "exercise": nil,
         "accelData": [String?:Double?]
