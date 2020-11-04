@@ -11,6 +11,11 @@ import WatchConnectivity
 class ViewController: UIViewController {
     let db = Firestore.firestore()
     var ref: DocumentReference? = nil
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var pastExercises: [Workout] = []
+    
     var exerciseData: [String:Any]? = nil
     /*var exerciseData: [String:Any]? = [
         "exercise": "benchPress",
@@ -29,15 +34,25 @@ class ViewController: UIViewController {
         if WCSession.isSupported(){
             wcSession = WCSession.default
             wcSession.delegate = self
+            tableView.dataSource = self
+            tableView.delegate = self
             wcSession.activate()
             print("WCsession set up properly")
             
         }
     }
+    
+    @IBAction func clearExercisesPressed(_ sender: UIButton) {
+        pastExercises = []
+    }
+    
     @IBAction func sendNameToWatch(_ sender: UIButton) {
         if let exerciseType = exerciseTypeTextField.text{
             print(wcSession.isReachable)
             print(exerciseType)
+            pastExercises.insert(Workout(workoutName: exerciseType), at: 0)
+            self.tableView.reloadData()
+            print(pastExercises)
             let message = ["exerciseType": exerciseType]
             print(message)
             wcSession.sendMessage(message, replyHandler: nil, errorHandler: {(error) in
@@ -95,5 +110,25 @@ extension ViewController: WCSessionDelegate{
     }
     
     
+}
+
+//MARK: - UITableViewDataSource
+extension ViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pastExercises.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)
+        cell.textLabel?.text = pastExercises[indexPath.row].workoutName
+        return cell
+    }
+}
+
+//MARK: - UITableViewDelegate
+extension ViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        exerciseTypeTextField.text = pastExercises[indexPath.row].workoutName
+    }
 }
 

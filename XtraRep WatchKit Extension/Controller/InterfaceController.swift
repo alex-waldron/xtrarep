@@ -148,11 +148,6 @@ class InterfaceController: WKInterfaceController {
     
     func resetScreen() {
         
-        //clear exercise type text field
-        exerciseTypeField.setText(nil)
-        
-        //clear var that holds exercise type
-        exerciseType = nil
         
         //Reset placeholder to initial String in case the user had to be reminded to input an exercise type
         exerciseTypeField.setPlaceholder("Exercise Type")
@@ -199,9 +194,9 @@ extension InterfaceController: WCSessionDelegate{
         //dont do anything
     }
     func session(_ session: WCSession, didReceiveMessage message: [String: Any]){
-        print(message["exerciseType"])
-        print("hello")
         exerciseTypeField.setText(message["exerciseType"] as? String)
+        
+        exerciseType = message["exerciseType"] as? String
     }
     
     /*func sendMessageToIOS(){

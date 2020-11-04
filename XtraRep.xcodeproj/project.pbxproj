@@ -33,6 +33,7 @@
 		A5B7D8062547B87800D673AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B7D8052547B87800D673AD /* Assets.xcassets */; };
 		A5B7D81D2547BC5900D673AD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D81C2547BC5900D673AD /* Constants.swift */; };
 		A5B7D8222547C33500D673AD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D8212547C33500D673AD /* Colors.swift */; };
+		A5D0D26B25522A4800C0C8C1 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0D26A25522A4800C0C8C1 /* WorkoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		A5B7D8082547B87800D673AD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		A5B7D81C2547BC5900D673AD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A5B7D8212547C33500D673AD /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A5D0D26A25522A4800C0C8C1 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		AC4A038E4342859353A2BCC8 /* Pods-XtraRep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep.debug.xcconfig"; path = "Target Support Files/Pods-XtraRep/Pods-XtraRep.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,10 +201,11 @@
 		A5B7D7D72547B87600D673AD /* XtraRep */ = {
 			isa = PBXGroup;
 			children = (
+				A5D0D26925522A2200C0C8C1 /* Controller */,
+				A5D0D26825522A1300C0C8C1 /* Views */,
+				A5D0D26725522A0A00C0C8C1 /* Models */,
 				A5B7D7D82547B87600D673AD /* AppDelegate.swift */,
 				A5B7D7DA2547B87600D673AD /* SceneDelegate.swift */,
-				A5B7D7DC2547B87600D673AD /* ViewController.swift */,
-				A5B7D7DE2547B87600D673AD /* Main.storyboard */,
 				A5B7D7E12547B87700D673AD /* Assets.xcassets */,
 				A5B7D7E32547B87700D673AD /* LaunchScreen.storyboard */,
 				A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */,
@@ -235,6 +238,30 @@
 				A503C1BA254C468400654200 /* XtraRep WatchKit App-Bridging-Header.h */,
 			);
 			path = "XtraRep WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		A5D0D26725522A0A00C0C8C1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A5D0D26A25522A4800C0C8C1 /* WorkoutView.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A5D0D26825522A1300C0C8C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5B7D7DE2547B87600D673AD /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A5D0D26925522A2200C0C8C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5B7D7DC2547B87600D673AD /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		D634FEFBE234A9EE1C05923E /* Pods */ = {
@@ -480,6 +507,7 @@
 				A5B7D7DD2547B87600D673AD /* ViewController.swift in Sources */,
 				A5B7D7D92547B87600D673AD /* AppDelegate.swift in Sources */,
 				A5B7D7DB2547B87600D673AD /* SceneDelegate.swift in Sources */,
+				A5D0D26B25522A4800C0C8C1 /* WorkoutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
