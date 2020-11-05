@@ -54,6 +54,15 @@ class WatchBrain{
         
     }
     
+    func getCurrentDate() -> String{
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        let datetime = formatter.string(from: date)
+        return datetime
+    }
+    
     func getExerciseData() -> ExerciseDataModel? {
         
         return exerciseData

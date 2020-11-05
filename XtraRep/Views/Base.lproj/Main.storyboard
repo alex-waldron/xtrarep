@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TRn-LL-fJh">
-                                <rect key="frame" x="5" y="276" width="404" height="620"/>
+                                <rect key="frame" x="5" y="393" width="404" height="503"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -73,6 +73,15 @@
                                     <action selector="sendNameToWatch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ebt-tU-lne"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey how's it going" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKH-V2-pOr">
+                                <rect key="frame" x="5" y="283" width="404" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="bZD-tW-WJu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,6 +90,9 @@
                             <constraint firstItem="TRn-LL-fJh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8og-YC-F9W"/>
                             <constraint firstItem="eMc-6O-HBq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="Ltc-uT-F1d"/>
                             <constraint firstItem="p2Q-tx-Fbr" firstAttribute="top" secondItem="eMc-6O-HBq" secondAttribute="bottom" constant="30" id="Zzp-AD-bKr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IKH-V2-pOr" secondAttribute="trailing" constant="5" id="agK-k9-toH"/>
+                            <constraint firstItem="TRn-LL-fJh" firstAttribute="top" secondItem="IKH-V2-pOr" secondAttribute="bottom" constant="10" id="brz-Cz-o0f"/>
+                            <constraint firstItem="IKH-V2-pOr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="cjb-dJ-KEt"/>
                             <constraint firstItem="U8u-UT-3iq" firstAttribute="top" secondItem="8xI-CN-cUg" secondAttribute="bottom" constant="8" symbolic="YES" id="eVM-Jx-i2I"/>
                             <constraint firstItem="p2Q-tx-Fbr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="hFo-R4-a2c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TRn-LL-fJh" secondAttribute="trailing" constant="5" id="hte-vW-NjM"/>
@@ -88,13 +100,15 @@
                             <constraint firstItem="8xI-CN-cUg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ntw-tR-nsV"/>
                             <constraint firstItem="eMc-6O-HBq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="obb-3N-5Fk"/>
                             <constraint firstItem="8xI-CN-cUg" firstAttribute="top" secondItem="p2Q-tx-Fbr" secondAttribute="bottom" constant="20" id="ocl-vY-goJ"/>
-                            <constraint firstItem="TRn-LL-fJh" firstAttribute="top" secondItem="8xI-CN-cUg" secondAttribute="bottom" constant="50" id="odY-QC-UoP"/>
+                            <constraint firstItem="IKH-V2-pOr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pbg-P7-grk"/>
                             <constraint firstItem="TRn-LL-fJh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="pce-bo-iG6"/>
+                            <constraint firstItem="IKH-V2-pOr" firstAttribute="top" secondItem="U8u-UT-3iq" secondAttribute="bottom" constant="10" id="swj-eI-ck6"/>
                             <constraint firstItem="eMc-6O-HBq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="too-Yl-UQm"/>
                             <constraint firstItem="U8u-UT-3iq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zJM-gd-M03"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="IKH-V2-pOr" id="dJX-dB-Zjk"/>
                         <outlet property="exerciseTypeTextField" destination="p2Q-tx-Fbr" id="sld-Av-Opz"/>
                         <outlet property="tableView" destination="TRn-LL-fJh" id="ukf-Ho-vWB"/>
                     </connections>

@@ -115,6 +115,7 @@ class InterfaceController: WKInterfaceController {
             watchBrain.resetExerciseData()   
             let lastSetDict = [
                 "exerciseType": lastSetData?.exerciseType! as Any,
+                "date": watchBrain.getCurrentDate() as Any,
                 "accelData" : lastSetData?.accelData as Any,
                 "gravityData": lastSetData?.gravityData as Any,
                 "attitudeData":lastSetData?.attitudeData as Any,

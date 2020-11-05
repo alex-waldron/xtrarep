@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var ref: DocumentReference? = nil
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var pastExercises: [Workout] = []
     
@@ -36,6 +37,7 @@ class ViewController: UIViewController {
             wcSession.delegate = self
             tableView.dataSource = self
             tableView.delegate = self
+            exerciseTypeTextField.delegate = self
             wcSession.activate()
             print("WCsession set up properly")
             
@@ -61,19 +63,6 @@ class ViewController: UIViewController {
             })
         }
     }
-    @IBAction func pushToFirebase(_ sender: UIButton) {
-        db.collection(exerciseData?["exercise"] as! String).addDocument(data: exerciseData!, completion: {(error) in
-                if let e = error {
-                    print("there was an issue adding data to fire store \(e)")
-                } else{
-                    print("SUCCESS")
-                }
-            }
-                
-        )
-        
-    
-    }
     
 }
 
@@ -91,8 +80,10 @@ extension ViewController: WCSessionDelegate{
         //push to firebase
         db.collection(exerciseData?["exerciseType"] as! String).addDocument(data: exerciseData!, completion: {(error) in
                 if let e = error {
-                    print("there was an issue adding data to fire store \(e)")
+                    self.errorLabel.text = e.localizedDescription
+                    print("there was an issue adding data to fire store \(e.localizedDescription)")
                 } else{
+                    self.errorLabel.text = "Firebase: Success"
                     print("SUCCESS")
                 }
             }
@@ -129,6 +120,18 @@ extension ViewController: UITableViewDataSource{
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         exerciseTypeTextField.text = pastExercises[indexPath.row].workoutName
+    }
+}
+
+//MARK: - UITextFieldDelegate
+extension ViewController: UITextFieldDelegate{
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        exerciseTypeTextField.endEditing(true)
+        return true
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        exerciseTypeTextField.endEditing(true)
+        return true
     }
 }
 
