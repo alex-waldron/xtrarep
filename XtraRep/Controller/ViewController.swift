@@ -11,7 +11,7 @@ import WatchConnectivity
 class ViewController: UIViewController {
     let db = Firestore.firestore()
     var ref: DocumentReference? = nil
-    
+    var i = 1
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //set up for watch connectivity
+        
         if WCSession.isSupported(){
             wcSession = WCSession.default
             wcSession.delegate = self
@@ -83,8 +84,9 @@ extension ViewController: WCSessionDelegate{
                     self.errorLabel.text = e.localizedDescription
                     print("there was an issue adding data to fire store \(e.localizedDescription)")
                 } else{
-                    self.errorLabel.text = "Firebase: Success"
+                    self.errorLabel.text = "Firebase: Success \(self.i)"
                     print("SUCCESS")
+                    self.i += 1
                 }
             }
                 
