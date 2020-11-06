@@ -9,10 +9,11 @@ import Foundation
 import CoreMotion
 
 class WatchBrain{
-    var exerciseData:ExerciseDataModel = ExerciseDataModel(exerciseType: nil, accelData: [], gravityData: [], rotationData: [], attitudeData: [])
+    var exerciseData:ExerciseDataModel = ExerciseDataModel(exerciseType: nil, times: [], accelData: [], gravityData: [], rotationData: [], attitudeData: [])
+    var count = 0
     func startCollectingData(exerciseName: String, motionManager: CMMotionManager){
         print("Start collecting data")
-        var count = 0
+        let startTime = Date()
         //setup data model
         exerciseData.exerciseType = exerciseName
         
@@ -30,13 +31,14 @@ class WatchBrain{
              //TRUE FUNCTIONALLITY
              
             if let data = data{
-                
-                count += 1
-                print(count)
+                let timeInterval = NSDateInterval(start: startTime, end: Date())
+                self.count += 1
+                print(self.count)
                 self.exerciseData.accelData.append(["x": data.userAcceleration.x, "y": data.userAcceleration.y, "z": data.userAcceleration.z])
                 self.exerciseData.gravityData.append(["x": data.gravity.x, "y": data.gravity.y, "z": data.gravity.z])
                 self.exerciseData.attitudeData.append(["roll": data.attitude.roll, "pitch":data.attitude.pitch, "yaw":data.attitude.yaw])
                 self.exerciseData.rotationData.append(["x": data.rotationRate.x, "y": data.rotationRate.y, "z": data.rotationRate.z])
+                self.exerciseData.times.append(NSDateInterval(start: startTime, end: Date()).duration)
                 
                 
             } else{
@@ -68,6 +70,7 @@ class WatchBrain{
         return exerciseData
     }
     func resetExerciseData(){
-        exerciseData = ExerciseDataModel(exerciseType: nil, accelData: [], gravityData: [], rotationData: [], attitudeData: [])
+        count = 0
+        exerciseData = ExerciseDataModel(exerciseType: nil, times: [], accelData: [], gravityData: [], rotationData: [], attitudeData: [])
     }
 }

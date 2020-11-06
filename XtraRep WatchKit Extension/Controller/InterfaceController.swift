@@ -109,13 +109,14 @@ class InterfaceController: WKInterfaceController {
         } else {
             //button state is stop
             
-            motionManager.stopAccelerometerUpdates()
+            motionManager.stopDeviceMotionUpdates()
             //get data received from last exercise
             let lastSetData = watchBrain.getExerciseData()
             watchBrain.resetExerciseData()   
             let lastSetDict = [
                 "exerciseType": lastSetData?.exerciseType! as Any,
                 "date": watchBrain.getCurrentDate() as Any,
+                "times": lastSetData?.times as Any,
                 "accelData" : lastSetData?.accelData as Any,
                 "gravityData": lastSetData?.gravityData as Any,
                 "attitudeData":lastSetData?.attitudeData as Any,
@@ -123,6 +124,7 @@ class InterfaceController: WKInterfaceController {
             ] as [String : Any]
             
             print(wcSession.isReachable)
+            
             wcSession.sendMessage(lastSetDict, replyHandler: nil) { (error) in
                 
                 print(error.localizedDescription)
