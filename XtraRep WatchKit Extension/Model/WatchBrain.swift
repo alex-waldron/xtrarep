@@ -12,8 +12,8 @@ class WatchBrain{
     var exerciseData:ExerciseDataModel = ExerciseDataModel(exerciseType: nil, times: [], accelData: [], gravityData: [], rotationData: [], attitudeData: [])
     var count = 0
     func startCollectingData(exerciseName: String, motionManager: CMMotionManager){
+        var time = 0.0
         print("Start collecting data")
-        let startTime = Date()
         //setup data model
         exerciseData.exerciseType = exerciseName
         
@@ -31,14 +31,14 @@ class WatchBrain{
              //TRUE FUNCTIONALLITY
              
             if let data = data{
-                let timeInterval = NSDateInterval(start: startTime, end: Date())
                 self.count += 1
                 print(self.count)
                 self.exerciseData.accelData.append(["x": data.userAcceleration.x, "y": data.userAcceleration.y, "z": data.userAcceleration.z])
                 self.exerciseData.gravityData.append(["x": data.gravity.x, "y": data.gravity.y, "z": data.gravity.z])
                 self.exerciseData.attitudeData.append(["roll": data.attitude.roll, "pitch":data.attitude.pitch, "yaw":data.attitude.yaw])
                 self.exerciseData.rotationData.append(["x": data.rotationRate.x, "y": data.rotationRate.y, "z": data.rotationRate.z])
-                self.exerciseData.times.append(NSDateInterval(start: startTime, end: Date()).duration)
+                self.exerciseData.times.append(time)
+                time += 0.05
                 
                 
             } else{
