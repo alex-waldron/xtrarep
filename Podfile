@@ -7,6 +7,7 @@ target 'XtraRep' do
 
   # Pods for XtraRep
   pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
 
 end
 
