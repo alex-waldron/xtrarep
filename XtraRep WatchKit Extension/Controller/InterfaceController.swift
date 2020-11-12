@@ -65,7 +65,10 @@ class InterfaceController: WKInterfaceController {
         wcSession.delegate = self
         wcSession.activate()
         watchBrain.delegate = self
-        
+        wcSession.sendMessage(["status":"active"], replyHandler: nil) { (error) in
+            print(error)
+        }
+        print("told iOS, watch is active")
         
     }
     

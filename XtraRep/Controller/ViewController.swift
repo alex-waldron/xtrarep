@@ -15,17 +15,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var errorLabel: UILabel!
     
-    var pastExercises: [Workout] = []
+    var pastExercises: [String] = []
     
     var exerciseData: [String:Any]? = nil
     /*var exerciseData: [String:Any]? = [
-        "exercise": "benchPress",
-        "accelData": [
-            ["x":1,"y":2,"z":3],
-            ["x":1,"y":2,"z":3],
-            ["x":1,"y":2,"z":3]
-        ]
-    ]*/
+     "exercise": "benchPress",
+     "accelData": [
+     ["x":1,"y":2,"z":3],
+     ["x":1,"y":2,"z":3],
+     ["x":1,"y":2,"z":3]
+     ]
+     ]*/
     var wcSession: WCSession! = nil
     @IBOutlet weak var exerciseTypeTextField: UITextField!
     override func viewDidLoad() {
@@ -52,9 +52,10 @@ class ViewController: UIViewController {
     @IBAction func sendNameToWatch(_ sender: UIButton) {
         if let exerciseType = exerciseTypeTextField.text{
             print(wcSession.isReachable)
-            print(exerciseType)
-            pastExercises.insert(Workout(workoutName: exerciseType), at: 0)
-            self.tableView.reloadData()
+            if !pastExercises.contains(exerciseType){
+                pastExercises.insert(exerciseType, at: 0)
+                self.tableView.reloadData()
+            }
             print(pastExercises)
             let message = ["exerciseType": exerciseType]
             print(message)
@@ -64,11 +65,14 @@ class ViewController: UIViewController {
             })
         }
     }
+    func getCurrentExercise()->String? {
+        return exerciseTypeTextField.text
+    }
     
 }
 
 extension ViewController: WCSessionDelegate{
-
+    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         //idc
     }
@@ -77,10 +81,10 @@ extension ViewController: WCSessionDelegate{
         //let decoder = JSONDecoder()
         print(messageData)
         /*do{
-            try print(decoder.decode(ExerciseDataModel.self, from: messageData))
-        }catch{
-            print("error decoding data")
-        }*/
+         try print(decoder.decode(ExerciseDataModel.self, from: messageData))
+         }catch{
+         print("error decoding data")
+         }*/
         
     }
     
@@ -88,74 +92,93 @@ extension ViewController: WCSessionDelegate{
         //can just use message but ima keep this line for now
         
         print("I got the message")
-        
-        func addNewData(dictionaryKey:String){
-            let newData = message[dictionaryKey] as? Array<Any>
-            var currentData = exerciseData![dictionaryKey] as? Array<Any>
-            for element in newData!{
-                currentData?.append(element)
-            }
-            exerciseData![dictionaryKey] = currentData
-        }
-        func addNewTime(){
-            let newTimes = message["times"] as? [Double]
-            var currentTimes = exerciseData?["times"] as? [Double]
-            for time in newTimes!{
-                currentTimes!.append(time)
-            }
-            exerciseData?["times"] = currentTimes
-        }
-        if let date = message["date"]{
-            if exerciseData != nil {
-                exerciseData?["date"] = date
-                addNewData(dictionaryKey: "accelData")
-                addNewData(dictionaryKey: "gravityData")
-                addNewData(dictionaryKey: "attitudeData")
-                addNewData(dictionaryKey: "rotationData")
-                addNewTime()
-            } else {
-                exerciseData = message
-            }
-            db.collection(exerciseData?["exerciseType"] as! String).addDocument(data: exerciseData!, completion: {(error) in
-                    if let e = error {
-                        self.errorLabel.text = e.localizedDescription
-                        print("there was an issue adding data to fire store \(e.localizedDescription)")
-                    } else{
-                        self.i += 1
-                        self.errorLabel.text = "Firebase: Success \(self.i)"
-                        print("SUCCESS")
-                        
+        DispatchQueue.main.async {
+            if message["status"] != nil {
+                if let exerciseType = self.getCurrentExercise(){
+                    print(self.wcSession.isReachable)
+                    if !self.pastExercises.contains(exerciseType) {
+                        self.pastExercises.insert(exerciseType, at: 0)
+                        self.tableView.reloadData()
                     }
-                }
                     
-            )
-            
-            exerciseData = nil
-            print(date)
-        } else{
-            
-            print("no date")
-            if exerciseData != nil{
-                addNewData(dictionaryKey: "accelData")
-                addNewData(dictionaryKey: "gravityData")
-                addNewData(dictionaryKey: "attitudeData")
-                addNewData(dictionaryKey: "rotationData")
-                addNewTime()
+                    let message = ["exerciseType": exerciseType]
+                    print(message)
+                    self.wcSession.sendMessage(message, replyHandler: nil, errorHandler: {(error) in
+                        print(error)
+                        print(error.localizedDescription)
+                    })
+                }
                 
             } else{
-                exerciseData = message
+                
+                func addNewData(dictionaryKey:String){
+                    let newData = message[dictionaryKey] as? Array<Any>
+                    var currentData = self.exerciseData![dictionaryKey] as? Array<Any>
+                    for element in newData!{
+                        currentData?.append(element)
+                    }
+                    self.exerciseData![dictionaryKey] = currentData
+                }
+                func addNewTime(){
+                    let newTimes = message["times"] as? [Double]
+                    var currentTimes = self.exerciseData?["times"] as? [Double]
+                    for time in newTimes!{
+                        currentTimes!.append(time)
+                    }
+                    self.exerciseData?["times"] = currentTimes
+                }
+                if let date = message["date"]{
+                    if self.exerciseData != nil {
+                        self.exerciseData?["date"] = date
+                        addNewData(dictionaryKey: "accelData")
+                        addNewData(dictionaryKey: "gravityData")
+                        addNewData(dictionaryKey: "attitudeData")
+                        addNewData(dictionaryKey: "rotationData")
+                        addNewTime()
+                    } else {
+                        self.exerciseData = message
+                    }
+                    self.db.collection(self.exerciseData?["exerciseType"] as! String).addDocument(data: self.exerciseData!, completion: {(error) in
+                        if let e = error {
+                            self.errorLabel.text = e.localizedDescription
+                            print("there was an issue adding data to fire store \(e.localizedDescription)")
+                        } else{
+                            self.i += 1
+                            self.errorLabel.text = "Firebase: Success \(self.i)"
+                            print("SUCCESS")
+                            
+                        }
+                    }
+                    
+                    )
+                    
+                    self.exerciseData = nil
+                    print(date)
+                } else{
+                    
+                    print("no date")
+                    if self.exerciseData != nil{
+                        addNewData(dictionaryKey: "accelData")
+                        addNewData(dictionaryKey: "gravityData")
+                        addNewData(dictionaryKey: "attitudeData")
+                        addNewData(dictionaryKey: "rotationData")
+                        addNewTime()
+                        
+                    } else{
+                        self.exerciseData = message
+                    }
+                    
+                }
+                
+                
+                self.errorLabel.text = "Firebase: Success \(self.i)"
+                
             }
-
         }
-        
-        DispatchQueue.main.async {
-            self.errorLabel.text = "Firebase: Success \(self.i)"
-        }
-        
         
         /*
-        //push to firebase
-        */
+         //push to firebase
+         */
         
     }
     
@@ -178,7 +201,7 @@ extension ViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)
-        cell.textLabel?.text = pastExercises[indexPath.row].workoutName
+        cell.textLabel?.text = pastExercises[indexPath.row]
         return cell
     }
 }
@@ -186,7 +209,7 @@ extension ViewController: UITableViewDataSource{
 //MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        exerciseTypeTextField.text = pastExercises[indexPath.row].workoutName
+        exerciseTypeTextField.text = pastExercises[indexPath.row]
     }
 }
 
