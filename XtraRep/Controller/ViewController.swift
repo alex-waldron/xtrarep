@@ -138,7 +138,8 @@ extension ViewController: WCSessionDelegate{
                     } else {
                         self.exerciseData = message
                     }
-                    self.db.collection(self.exerciseData?["exerciseType"] as! String).addDocument(data: self.exerciseData!, completion: {(error) in
+                    let workoutRef = self.db.collection("awaldron12@outlook.com").document("workouts").collection(self.exerciseData?["exerciseType"] as! String)
+                    workoutRef.addDocument(data: self.exerciseData!) { (error) in
                         if let e = error {
                             self.errorLabel.text = e.localizedDescription
                             print("there was an issue adding data to fire store \(e.localizedDescription)")
@@ -149,8 +150,6 @@ extension ViewController: WCSessionDelegate{
                             
                         }
                     }
-                    
-                    )
                     
                     self.exerciseData = nil
                     print(date)
