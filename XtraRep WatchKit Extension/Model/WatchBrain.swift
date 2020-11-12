@@ -7,9 +7,15 @@
 
 import Foundation
 import CoreMotion
+import WatchConnectivity
+
+protocol WatchBrainDelegate {
+    func sendDataToiOS()
+}
 
 class WatchBrain{
     var exerciseData:ExerciseDataModel = ExerciseDataModel(exerciseType: nil, times: [], accelData: [], gravityData: [], rotationData: [], attitudeData: [])
+    var delegate: WatchBrainDelegate?
     var count = 0
     func startCollectingData(exerciseName: String, motionManager: CMMotionManager){
         var time = 0.0
@@ -39,7 +45,11 @@ class WatchBrain{
                 self.exerciseData.rotationData.append(["x": data.rotationRate.x, "y": data.rotationRate.y, "z": data.rotationRate.z])
                 self.exerciseData.times.append(time)
                 time += 0.05
-                
+                if self.count > 400 {
+                    self.delegate?.sendDataToiOS()
+                    self.count = 0
+                    self.exerciseData = ExerciseDataModel(exerciseType: exerciseName, times: [], accelData: [], gravityData: [], rotationData: [], attitudeData: [])
+                }
                 
             } else{
                 if let e = error {

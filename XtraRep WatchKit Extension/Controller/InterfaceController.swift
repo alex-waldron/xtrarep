@@ -64,6 +64,7 @@ class InterfaceController: WKInterfaceController {
         wcSession = WCSession.default
         wcSession.delegate = self
         wcSession.activate()
+        watchBrain.delegate = self
         
         
     }
@@ -112,16 +113,11 @@ class InterfaceController: WKInterfaceController {
             motionManager.stopDeviceMotionUpdates()
             //get data received from last exercise
             let lastSetData = watchBrain.getExerciseData()
-            watchBrain.resetExerciseData()   
-            let lastSetDict = [
-                "exerciseType": lastSetData?.exerciseType! as Any,
-                "date": watchBrain.getCurrentDate() as Any,
-                "times": lastSetData?.times as Any,
-                "accelData" : lastSetData?.accelData as Any,
-                "gravityData": lastSetData?.gravityData as Any,
-                "attitudeData":lastSetData?.attitudeData as Any,
-                "rotationData":lastSetData?.rotationData as Any
-            ] as [String : Any]
+            watchBrain.resetExerciseData()
+            
+            //create sendable dict and add date
+            var lastSetDict = createDictFromExerciseData(exerciseData: lastSetData)
+            lastSetDict["date"] = watchBrain.getCurrentDate()
             
             print(wcSession.isReachable)
             
@@ -190,6 +186,19 @@ class InterfaceController: WKInterfaceController {
     }
 }
 
+func createDictFromExerciseData(exerciseData:ExerciseDataModel?) -> [String:Any] {
+    let returnDict = [
+        "exerciseType": exerciseData?.exerciseType! as Any,
+        "times": exerciseData?.times as Any,
+        "accelData" : exerciseData?.accelData as Any,
+        "gravityData": exerciseData?.gravityData as Any,
+        "attitudeData": exerciseData?.attitudeData as Any,
+        "rotationData": exerciseData?.rotationData as Any
+    ] as [String : Any]
+    return returnDict
+}
+
+
 //MARK: - WCSessionDelegate
 
 extension InterfaceController: WCSessionDelegate{
@@ -206,6 +215,19 @@ extension InterfaceController: WCSessionDelegate{
      wcSession.sendMessage(<#T##message: [String : Any]##[String : Any]#>, replyHandler: <#T##(([String : Any]) -> Void)?##(([String : Any]) -> Void)?##([String : Any]) -> Void#>, errorHandler: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
      }*/
     
+    
+    
+}
+
+//MARK: - WatchBrainDelegate
+extension InterfaceController: WatchBrainDelegate{
+    func sendDataToiOS() {
+        let currentExerciseData = watchBrain.getExerciseData()
+        let dataDict = createDictFromExerciseData(exerciseData: currentExerciseData)
+        self.wcSession.sendMessage(dataDict, replyHandler: nil, errorHandler: { (error) in
+                print(error)
+            })
+    }
     
     
 }

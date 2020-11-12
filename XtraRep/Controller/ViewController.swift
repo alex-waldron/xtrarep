@@ -11,7 +11,7 @@ import WatchConnectivity
 class ViewController: UIViewController {
     let db = Firestore.firestore()
     var ref: DocumentReference? = nil
-    var i = 1
+    var i = 0
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var errorLabel: UILabel!
     
@@ -68,29 +68,94 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: WCSessionDelegate{
+
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         //idc
     }
     
+    func session(_ session: WCSession, didReceiveMessageData messageData: Data) {
+        //let decoder = JSONDecoder()
+        print(messageData)
+        /*do{
+            try print(decoder.decode(ExerciseDataModel.self, from: messageData))
+        }catch{
+            print("error decoding data")
+        }*/
+        
+    }
+    
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         //can just use message but ima keep this line for now
-        exerciseData = message
-        print("I got the message")
-        print(message)
         
-        //push to firebase
-        db.collection(exerciseData?["exerciseType"] as! String).addDocument(data: exerciseData!, completion: {(error) in
-                if let e = error {
-                    self.errorLabel.text = e.localizedDescription
-                    print("there was an issue adding data to fire store \(e.localizedDescription)")
-                } else{
-                    self.errorLabel.text = "Firebase: Success \(self.i)"
-                    print("SUCCESS")
-                    self.i += 1
-                }
+        print("I got the message")
+        
+        func addNewData(dictionaryKey:String){
+            let newData = message[dictionaryKey] as? Array<Any>
+            var currentData = exerciseData![dictionaryKey] as? Array<Any>
+            for element in newData!{
+                currentData?.append(element)
             }
+            exerciseData![dictionaryKey] = currentData
+        }
+        func addNewTime(){
+            let newTimes = message["times"] as? [Double]
+            var currentTimes = exerciseData?["times"] as? [Double]
+            for time in newTimes!{
+                currentTimes!.append(time)
+            }
+            exerciseData?["times"] = currentTimes
+        }
+        if let date = message["date"]{
+            if exerciseData != nil {
+                exerciseData?["date"] = date
+                addNewData(dictionaryKey: "accelData")
+                addNewData(dictionaryKey: "gravityData")
+                addNewData(dictionaryKey: "attitudeData")
+                addNewData(dictionaryKey: "rotationData")
+                addNewTime()
+            } else {
+                exerciseData = message
+            }
+            db.collection(exerciseData?["exerciseType"] as! String).addDocument(data: exerciseData!, completion: {(error) in
+                    if let e = error {
+                        self.errorLabel.text = e.localizedDescription
+                        print("there was an issue adding data to fire store \(e.localizedDescription)")
+                    } else{
+                        self.i += 1
+                        self.errorLabel.text = "Firebase: Success \(self.i)"
+                        print("SUCCESS")
+                        
+                    }
+                }
+                    
+            )
+            
+            exerciseData = nil
+            print(date)
+        } else{
+            
+            print("no date")
+            if exerciseData != nil{
+                addNewData(dictionaryKey: "accelData")
+                addNewData(dictionaryKey: "gravityData")
+                addNewData(dictionaryKey: "attitudeData")
+                addNewData(dictionaryKey: "rotationData")
+                addNewTime()
                 
-        )
+            } else{
+                exerciseData = message
+            }
+
+        }
+        
+        DispatchQueue.main.async {
+            self.errorLabel.text = "Firebase: Success \(self.i)"
+        }
+        
+        
+        /*
+        //push to firebase
+        */
         
     }
     

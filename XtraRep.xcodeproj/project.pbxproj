@@ -19,6 +19,7 @@
 		A52E45042559DEDC003856E3 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52E45032559DEDC003856E3 /* HomeScreen.swift */; };
 		A53BFD862559E347006106DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BFD852559E347006106DD /* LoginViewController.swift */; };
 		A53BFD8B2559E363006106DD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53BFD8A2559E363006106DD /* RegisterViewController.swift */; };
+		A5B06374255B505D00F1FBE7 /* ExerciseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B06373255B505D00F1FBE7 /* ExerciseDataModel.swift */; };
 		A5B7D7D92547B87600D673AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D7D82547B87600D673AD /* AppDelegate.swift */; };
 		A5B7D7DB2547B87600D673AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D7DA2547B87600D673AD /* SceneDelegate.swift */; };
 		A5B7D7DD2547B87600D673AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D7DC2547B87600D673AD /* ViewController.swift */; };
@@ -98,6 +99,7 @@
 		A52E45032559DEDC003856E3 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		A53BFD852559E347006106DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A53BFD8A2559E363006106DD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A5B06373255B505D00F1FBE7 /* ExerciseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDataModel.swift; sourceTree = "<group>"; };
 		A5B7D7D52547B87600D673AD /* XtraRep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XtraRep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B7D7D82547B87600D673AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B7D7DA2547B87600D673AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				A5D0D26A25522A4800C0C8C1 /* WorkoutView.swift */,
+				A5B06373255B505D00F1FBE7 /* ExerciseDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				A5B7D7DD2547B87600D673AD /* ViewController.swift in Sources */,
 				A53BFD8B2559E363006106DD /* RegisterViewController.swift in Sources */,
 				A52E45042559DEDC003856E3 /* HomeScreen.swift in Sources */,
+				A5B06374255B505D00F1FBE7 /* ExerciseDataModel.swift in Sources */,
 				A5B7D7D92547B87600D673AD /* AppDelegate.swift in Sources */,
 				A5B7D7DB2547B87600D673AD /* SceneDelegate.swift in Sources */,
 				A5D0D26B25522A4800C0C8C1 /* WorkoutView.swift in Sources */,

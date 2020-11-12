@@ -1,12 +1,11 @@
 //
 //  ExerciseDataModel.swift
-//  XtraRep WatchKit Extension
+//  XtraRep
 //
-//  Created by Alex Waldron on 10/27/20.
+//  Created by Alex Waldron on 11/10/20.
 //
 
 import Foundation
-
 
 struct ExerciseDataModel: Codable {
     var exerciseType:String?
