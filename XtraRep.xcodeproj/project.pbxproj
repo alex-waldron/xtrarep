@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D8EDD076DAF95DB3CEA9108 /* Pods_XtraRep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0917406747E7762DC6B1385B /* Pods_XtraRep.framework */; };
-		7288C40A3B502ABB2A8C670F /* Pods_XtraRep_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 008B84FDD35A2AD14DD6B58D /* Pods_XtraRep_WatchKit_Extension.framework */; };
-		9D479C5F4952981CF8545298 /* Pods_XtraRep_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D1F0014486BB48B9B9A095 /* Pods_XtraRep_WatchKit_App.framework */; };
+		85F391AB1855ABE70539F4D5 /* Pods_XtraRep_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB3ACF21E3D8F4AAE93BBCC /* Pods_XtraRep_WatchKit_App.framework */; };
 		A503C1C2254C476700654200 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A503C1C1254C476700654200 /* Constants.swift */; };
 		A521E04D2548DD7700F87B1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */; };
 		A521E04E2548DD7700F87B1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */; };
@@ -38,6 +36,8 @@
 		A5B7D81D2547BC5900D673AD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D81C2547BC5900D673AD /* Constants.swift */; };
 		A5B7D8222547C33500D673AD /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B7D8212547C33500D673AD /* Colors.swift */; };
 		A5D0D26B25522A4800C0C8C1 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0D26A25522A4800C0C8C1 /* WorkoutView.swift */; };
+		A626D55B4C8B3DC353000A77 /* Pods_XtraRep_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B023C113DEF2AB3C6CDF8ACF /* Pods_XtraRep_WatchKit_Extension.framework */; };
+		CDD340643F3FFA7BAE1A11F2 /* Pods_XtraRep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B7EC8EA3C63D291888A748 /* Pods_XtraRep.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,14 +83,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		008B84FDD35A2AD14DD6B58D /* Pods_XtraRep_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XtraRep_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0917406747E7762DC6B1385B /* Pods_XtraRep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XtraRep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		10B936462263E7324BEAF6F0 /* Pods-XtraRep WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit App/Pods-XtraRep WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
-		464FB0E393C11C39243EBC5C /* Pods-XtraRep WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit Extension/Pods-XtraRep WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		5B9DC646F5C47AC4A0F8C706 /* Pods-XtraRep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep.release.xcconfig"; path = "Target Support Files/Pods-XtraRep/Pods-XtraRep.release.xcconfig"; sourceTree = "<group>"; };
-		68D1F0014486BB48B9B9A095 /* Pods_XtraRep_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XtraRep_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7624A47060611782EC936F3F /* Pods-XtraRep WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit Extension/Pods-XtraRep WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		8BF01BCD72D0CC504E5D42D7 /* Pods-XtraRep WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit App/Pods-XtraRep WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		1DB3ACF21E3D8F4AAE93BBCC /* Pods_XtraRep_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XtraRep_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45EA6CAC7E27EE2F2DE6B607 /* Pods-XtraRep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep.debug.xcconfig"; path = "Target Support Files/Pods-XtraRep/Pods-XtraRep.debug.xcconfig"; sourceTree = "<group>"; };
 		A503C1BA254C468400654200 /* XtraRep WatchKit App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XtraRep WatchKit App-Bridging-Header.h"; sourceTree = "<group>"; };
 		A503C1C1254C476700654200 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A521E04C2548DD7700F87B1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -123,7 +117,13 @@
 		A5B7D81C2547BC5900D673AD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A5B7D8212547C33500D673AD /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A5D0D26A25522A4800C0C8C1 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
-		AC4A038E4342859353A2BCC8 /* Pods-XtraRep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep.debug.xcconfig"; path = "Target Support Files/Pods-XtraRep/Pods-XtraRep.debug.xcconfig"; sourceTree = "<group>"; };
+		A7B7EC8EA3C63D291888A748 /* Pods_XtraRep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XtraRep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADA36C5F4FC5AA43235F987A /* Pods-XtraRep WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit Extension/Pods-XtraRep WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		B023C113DEF2AB3C6CDF8ACF /* Pods_XtraRep_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XtraRep_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8E37466585549AB0CD527A9 /* Pods-XtraRep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep.release.xcconfig"; path = "Target Support Files/Pods-XtraRep/Pods-XtraRep.release.xcconfig"; sourceTree = "<group>"; };
+		D7EC130153AC122739C2B3AC /* Pods-XtraRep WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit App/Pods-XtraRep WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		EF30A4EA5D38043BE8654E98 /* Pods-XtraRep WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit Extension/Pods-XtraRep WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		FB83021A849226154E88093D /* Pods-XtraRep WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XtraRep WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-XtraRep WatchKit App/Pods-XtraRep WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D479C5F4952981CF8545298 /* Pods_XtraRep_WatchKit_App.framework in Frameworks */,
+				85F391AB1855ABE70539F4D5 /* Pods_XtraRep_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D8EDD076DAF95DB3CEA9108 /* Pods_XtraRep.framework in Frameworks */,
+				CDD340643F3FFA7BAE1A11F2 /* Pods_XtraRep.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,19 +147,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7288C40A3B502ABB2A8C670F /* Pods_XtraRep_WatchKit_Extension.framework in Frameworks */,
+				A626D55B4C8B3DC353000A77 /* Pods_XtraRep_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A10BE985896DFC0A473F5247 /* Frameworks */ = {
+		2FA53D4A3077805941F522D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0917406747E7762DC6B1385B /* Pods_XtraRep.framework */,
-				68D1F0014486BB48B9B9A095 /* Pods_XtraRep_WatchKit_App.framework */,
-				008B84FDD35A2AD14DD6B58D /* Pods_XtraRep_WatchKit_Extension.framework */,
+				A7B7EC8EA3C63D291888A748 /* Pods_XtraRep.framework */,
+				1DB3ACF21E3D8F4AAE93BBCC /* Pods_XtraRep_WatchKit_App.framework */,
+				B023C113DEF2AB3C6CDF8ACF /* Pods_XtraRep_WatchKit_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,7 +192,7 @@
 				A5B7D7FC2547B87800D673AD /* XtraRep WatchKit Extension */,
 				A5B7D7D62547B87600D673AD /* Products */,
 				D634FEFBE234A9EE1C05923E /* Pods */,
-				A10BE985896DFC0A473F5247 /* Frameworks */,
+				2FA53D4A3077805941F522D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -279,12 +279,12 @@
 		D634FEFBE234A9EE1C05923E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AC4A038E4342859353A2BCC8 /* Pods-XtraRep.debug.xcconfig */,
-				5B9DC646F5C47AC4A0F8C706 /* Pods-XtraRep.release.xcconfig */,
-				8BF01BCD72D0CC504E5D42D7 /* Pods-XtraRep WatchKit App.debug.xcconfig */,
-				10B936462263E7324BEAF6F0 /* Pods-XtraRep WatchKit App.release.xcconfig */,
-				464FB0E393C11C39243EBC5C /* Pods-XtraRep WatchKit Extension.debug.xcconfig */,
-				7624A47060611782EC936F3F /* Pods-XtraRep WatchKit Extension.release.xcconfig */,
+				45EA6CAC7E27EE2F2DE6B607 /* Pods-XtraRep.debug.xcconfig */,
+				C8E37466585549AB0CD527A9 /* Pods-XtraRep.release.xcconfig */,
+				FB83021A849226154E88093D /* Pods-XtraRep WatchKit App.debug.xcconfig */,
+				D7EC130153AC122739C2B3AC /* Pods-XtraRep WatchKit App.release.xcconfig */,
+				ADA36C5F4FC5AA43235F987A /* Pods-XtraRep WatchKit Extension.debug.xcconfig */,
+				EF30A4EA5D38043BE8654E98 /* Pods-XtraRep WatchKit Extension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -296,12 +296,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5B7D8132547B87800D673AD /* Build configuration list for PBXNativeTarget "XtraRep" */;
 			buildPhases = (
-				6F0BE92DC45A291A7DC4EFEC /* [CP] Check Pods Manifest.lock */,
+				800F02F92650B1CD82F4158A /* [CP] Check Pods Manifest.lock */,
 				A5B7D7D12547B87600D673AD /* Sources */,
 				A5B7D7D22547B87600D673AD /* Frameworks */,
 				A5B7D7D32547B87600D673AD /* Resources */,
 				A5B7D8122547B87800D673AD /* Embed Watch Content */,
-				7F7AF386E92AE37F9FC253BA /* [CP] Embed Pods Frameworks */,
+				150F9B495419A0C32BBF2C0A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -317,7 +317,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5B7D80F2547B87800D673AD /* Build configuration list for PBXNativeTarget "XtraRep WatchKit App" */;
 			buildPhases = (
-				376EF0FD064A22858F96FDB4 /* [CP] Check Pods Manifest.lock */,
+				C8C60EC2CBE893AB6DEF945E /* [CP] Check Pods Manifest.lock */,
 				A5B7D7E72547B87700D673AD /* Resources */,
 				A5B7D80E2547B87800D673AD /* Embed App Extensions */,
 				20F266D6A04CC68079342B87 /* Frameworks */,
@@ -336,7 +336,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5B7D80B2547B87800D673AD /* Build configuration list for PBXNativeTarget "XtraRep WatchKit Extension" */;
 			buildPhases = (
-				5BA3EEE9C22A24BDDF5DB902 /* [CP] Check Pods Manifest.lock */,
+				A61FE991FAC9FB19D0F49264 /* [CP] Check Pods Manifest.lock */,
 				A5B7D7F42547B87800D673AD /* Sources */,
 				A5B7D7F52547B87800D673AD /* Frameworks */,
 				A5B7D7F62547B87800D673AD /* Resources */,
@@ -425,51 +425,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		376EF0FD064A22858F96FDB4 /* [CP] Check Pods Manifest.lock */ = {
+		150F9B495419A0C32BBF2C0A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XtraRep/Pods-XtraRep-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-XtraRep WatchKit App-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-XtraRep/Pods-XtraRep-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XtraRep/Pods-XtraRep-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5BA3EEE9C22A24BDDF5DB902 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-XtraRep WatchKit Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6F0BE92DC45A291A7DC4EFEC /* [CP] Check Pods Manifest.lock */ = {
+		800F02F92650B1CD82F4158A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -491,21 +464,48 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7F7AF386E92AE37F9FC253BA /* [CP] Embed Pods Frameworks */ = {
+		A61FE991FAC9FB19D0F49264 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-XtraRep/Pods-XtraRep-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-XtraRep/Pods-XtraRep-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XtraRep WatchKit Extension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XtraRep/Pods-XtraRep-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8C60EC2CBE893AB6DEF945E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XtraRep WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -698,11 +698,13 @@
 		};
 		A5B7D80C2547B87800D673AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 464FB0E393C11C39243EBC5C /* Pods-XtraRep WatchKit Extension.debug.xcconfig */;
+			baseConfigurationReference = ADA36C5F4FC5AA43235F987A /* Pods-XtraRep WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K333Z73UYG;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "XtraRep WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -713,6 +715,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
@@ -721,11 +724,13 @@
 		};
 		A5B7D80D2547B87800D673AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7624A47060611782EC936F3F /* Pods-XtraRep WatchKit Extension.release.xcconfig */;
+			baseConfigurationReference = EF30A4EA5D38043BE8654E98 /* Pods-XtraRep WatchKit Extension.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K333Z73UYG;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "XtraRep WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -736,6 +741,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
@@ -745,7 +751,7 @@
 		};
 		A5B7D8102547B87800D673AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BF01BCD72D0CC504E5D42D7 /* Pods-XtraRep WatchKit App.debug.xcconfig */;
+			baseConfigurationReference = FB83021A849226154E88093D /* Pods-XtraRep WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -753,6 +759,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K333Z73UYG;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = XtraRep_WatchKit_Extension;
 				INFOPLIST_FILE = "XtraRep WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -764,6 +771,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos";
 				SWIFT_OBJC_BRIDGING_HEADER = "XtraRep WatchKit Extension/XtraRep WatchKit App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -774,7 +782,7 @@
 		};
 		A5B7D8112547B87800D673AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10B936462263E7324BEAF6F0 /* Pods-XtraRep WatchKit App.release.xcconfig */;
+			baseConfigurationReference = D7EC130153AC122739C2B3AC /* Pods-XtraRep WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -782,6 +790,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K333Z73UYG;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = XtraRep_WatchKit_Extension;
 				INFOPLIST_FILE = "XtraRep WatchKit App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -793,6 +802,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos";
 				SWIFT_OBJC_BRIDGING_HEADER = "XtraRep WatchKit Extension/XtraRep WatchKit App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -803,12 +813,13 @@
 		};
 		A5B7D8142547B87800D673AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC4A038E4342859353A2BCC8 /* Pods-XtraRep.debug.xcconfig */;
+			baseConfigurationReference = 45EA6CAC7E27EE2F2DE6B607 /* Pods-XtraRep.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K333Z73UYG;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = XtraRep/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -818,6 +829,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinyhacktechnology.XtraRep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WATCHOS_DEPLOYMENT_TARGET = 6.0;
@@ -826,12 +838,13 @@
 		};
 		A5B7D8152547B87800D673AD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B9DC646F5C47AC4A0F8C706 /* Pods-XtraRep.release.xcconfig */;
+			baseConfigurationReference = C8E37466585549AB0CD527A9 /* Pods-XtraRep.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K333Z73UYG;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = XtraRep/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -841,6 +854,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinyhacktechnology.XtraRep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

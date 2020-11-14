@@ -90,7 +90,7 @@ class InterfaceController: WKInterfaceController {
                 
                 //if the text field has some sort of text in it,
                 //check to see if the accelerometer is available
-                if motionManager.isAccelerometerAvailable{
+                if motionManager.isDeviceMotionAvailable{
                     
                     //if accell is available, start getting data from it
                     watchBrain.startCollectingData(exerciseName: exerciseType!, motionManager: motionManager)
@@ -113,7 +113,7 @@ class InterfaceController: WKInterfaceController {
         } else {
             //button state is stop
             
-            motionManager.stopDeviceMotionUpdates()
+            motionManager.stopAccelerometerUpdates()
             //get data received from last exercise
             let lastSetData = watchBrain.getExerciseData()
             watchBrain.resetExerciseData()
@@ -192,11 +192,7 @@ class InterfaceController: WKInterfaceController {
 func createDictFromExerciseData(exerciseData:ExerciseDataModel?) -> [String:Any] {
     let returnDict = [
         "exerciseType": exerciseData?.exerciseType! as Any,
-        "times": exerciseData?.times as Any,
         "accelData" : exerciseData?.accelData as Any,
-        "gravityData": exerciseData?.gravityData as Any,
-        "attitudeData": exerciseData?.attitudeData as Any,
-        "rotationData": exerciseData?.rotationData as Any
     ] as [String : Any]
     return returnDict
 }

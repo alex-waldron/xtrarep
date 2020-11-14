@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import WatchConnectivity
+
 class ViewController: UIViewController {
     let db = Firestore.firestore()
     var ref: DocumentReference? = nil
@@ -102,7 +103,6 @@ extension ViewController: WCSessionDelegate{
                     }
                     
                     let message = ["exerciseType": exerciseType]
-                    print(message)
                     self.wcSession.sendMessage(message, replyHandler: nil, errorHandler: {(error) in
                         print(error)
                         print(error.localizedDescription)
@@ -112,33 +112,31 @@ extension ViewController: WCSessionDelegate{
             } else{
                 
                 func addNewData(dictionaryKey:String){
-                    let newData = message[dictionaryKey] as? Array<Any>
-                    var currentData = self.exerciseData![dictionaryKey] as? Array<Any>
-                    for element in newData!{
-                        currentData?.append(element)
+                    let newData = message[dictionaryKey] as? [String:[Double]]
+                    var currentData = self.exerciseData![dictionaryKey] as? [String:[Double]]
+                    for element in (newData!["x"])!{
+                        currentData?["x"]?.append(element)
+                    }
+                    for element in (newData?["y"])!{
+                        currentData?["y"]?.append(element)
+                    }
+                    for element in (newData?["z"])!{
+                        currentData?["z"]?.append(element)
+                    }
+                    for element in (newData?["t"])!{
+                        currentData?["t"]?.append(element)
                     }
                     self.exerciseData![dictionaryKey] = currentData
                 }
-                func addNewTime(){
-                    let newTimes = message["times"] as? [Double]
-                    var currentTimes = self.exerciseData?["times"] as? [Double]
-                    for time in newTimes!{
-                        currentTimes!.append(time)
-                    }
-                    self.exerciseData?["times"] = currentTimes
-                }
+
                 if let date = message["date"]{
                     if self.exerciseData != nil {
                         self.exerciseData?["date"] = date
                         addNewData(dictionaryKey: "accelData")
-                        addNewData(dictionaryKey: "gravityData")
-                        addNewData(dictionaryKey: "attitudeData")
-                        addNewData(dictionaryKey: "rotationData")
-                        addNewTime()
                     } else {
                         self.exerciseData = message
                     }
-                    let workoutRef = self.db.collection("awaldron12@outlook.com").document("workouts").collection(self.exerciseData?["exerciseType"] as! String)
+                    let workoutRef = self.db.collection("awaldron12@outlook.comNEW").document("workouts").collection(self.exerciseData?["exerciseType"] as! String)
                     workoutRef.addDocument(data: self.exerciseData!) { (error) in
                         if let e = error {
                             self.errorLabel.text = e.localizedDescription
@@ -158,10 +156,7 @@ extension ViewController: WCSessionDelegate{
                     print("no date")
                     if self.exerciseData != nil{
                         addNewData(dictionaryKey: "accelData")
-                        addNewData(dictionaryKey: "gravityData")
-                        addNewData(dictionaryKey: "attitudeData")
-                        addNewData(dictionaryKey: "rotationData")
-                        addNewTime()
+                        
                         
                     } else{
                         self.exerciseData = message
