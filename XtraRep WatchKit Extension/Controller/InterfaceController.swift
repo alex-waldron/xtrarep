@@ -113,7 +113,7 @@ class InterfaceController: WKInterfaceController {
         } else {
             //button state is stop
             
-            motionManager.stopAccelerometerUpdates()
+            motionManager.stopDeviceMotionUpdates()
             //get data received from last exercise
             let lastSetData = watchBrain.getExerciseData()
             watchBrain.resetExerciseData()
@@ -193,6 +193,9 @@ func createDictFromExerciseData(exerciseData:ExerciseDataModel?) -> [String:Any]
     let returnDict = [
         "exerciseType": exerciseData?.exerciseType! as Any,
         "accelData" : exerciseData?.accelData as Any,
+        "gravityData" : exerciseData?.gravityData as Any,
+        "rotationData" : exerciseData?.rotationData as Any,
+        "attitudeData" : exerciseData?.attitudeData as Any
     ] as [String : Any]
     return returnDict
 }

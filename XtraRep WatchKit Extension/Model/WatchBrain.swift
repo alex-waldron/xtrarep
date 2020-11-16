@@ -14,7 +14,7 @@ protocol WatchBrainDelegate {
 }
 
 class WatchBrain{
-    var exerciseData:ExerciseDataModel = ExerciseDataModel(exerciseType: nil, accelData: ["x":[],"y":[], "z":[], "t":[]])
+    var exerciseData:ExerciseDataModel = ExerciseDataModel(exerciseType: nil, accelData: ["x":[],"y":[], "z":[], "t":[]], gravityData: ["x":[],"y":[], "z":[], "t":[]], rotationData: ["x":[],"y":[], "z":[], "t":[]], attitudeData: ["pitch":[],"roll":[], "yaw":[], "t":[]])
     var delegate: WatchBrainDelegate?
     var count = 0
     func startCollectingData(exerciseName: String, motionManager: CMMotionManager){
@@ -25,8 +25,8 @@ class WatchBrain{
         
         //Update interval frequency = 60 Hz
         let updateInterval = 1.0/60.0
-        motionManager.accelerometerUpdateInterval = updateInterval
-        motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler: {(data, error) in
+        motionManager.deviceMotionUpdateInterval = updateInterval
+        motionManager.startDeviceMotionUpdates(to: OperationQueue.current!, withHandler: {(data, error) in
             //TEST
             //var accelData = exerciseData!.data[K.dataDict.accelKey] as! [Any]
             if error != nil {
@@ -40,15 +40,30 @@ class WatchBrain{
             if let data = data{
                 self.count += 1
                 print(self.count)
-                self.exerciseData.accelData["x"]?.append(data.acceleration.x)
-                self.exerciseData.accelData["y"]?.append(data.acceleration.y)
-                self.exerciseData.accelData["z"]?.append(data.acceleration.z)
+                self.exerciseData.accelData["x"]?.append(data.userAcceleration.x)
+                self.exerciseData.accelData["y"]?.append(data.userAcceleration.y)
+                self.exerciseData.accelData["z"]?.append(data.userAcceleration.z)
                 self.exerciseData.accelData["t"]?.append(time)
+                
+                self.exerciseData.gravityData["x"]?.append(data.gravity.x)
+                self.exerciseData.gravityData["y"]?.append(data.gravity.y)
+                self.exerciseData.gravityData["z"]?.append(data.gravity.z)
+                self.exerciseData.gravityData["t"]?.append(time)
+                
+                self.exerciseData.rotationData["x"]?.append(data.rotationRate.x)
+                self.exerciseData.rotationData["y"]?.append(data.rotationRate.y)
+                self.exerciseData.rotationData["z"]?.append(data.rotationRate.z)
+                self.exerciseData.rotationData["t"]?.append(time)
+                
+                self.exerciseData.attitudeData["pitch"]?.append(data.attitude.pitch)
+                self.exerciseData.attitudeData["roll"]?.append(data.attitude.roll)
+                self.exerciseData.attitudeData["yaw"]?.append(data.attitude.yaw)
+                self.exerciseData.rotationData["t"]?.append(time)
                 time += updateInterval
                 if self.count > 400 {
                     self.delegate?.sendDataToiOS()
                     self.count = 0
-                    self.exerciseData = ExerciseDataModel(exerciseType: exerciseName, accelData: ["x":[],"y":[], "z":[], "t":[]])
+                    self.exerciseData = ExerciseDataModel(exerciseType: exerciseName, accelData: ["x":[],"y":[], "z":[], "t":[]], gravityData: ["x":[],"y":[], "z":[], "t":[]], rotationData: ["x":[],"y":[], "z":[], "t":[]], attitudeData: ["pitch":[],"roll":[], "yaw":[], "t":[]])
                 }
                 print(self.count)
                 
@@ -82,6 +97,6 @@ class WatchBrain{
     }
     func resetExerciseData(){
         count = 0
-        exerciseData = ExerciseDataModel(exerciseType: nil, accelData: ["x":[],"y":[], "z":[], "t":[]])
+        exerciseData = ExerciseDataModel(exerciseType: nil, accelData: ["x":[],"y":[], "z":[], "t":[]], gravityData: ["x":[],"y":[], "z":[], "t":[]], rotationData: ["x":[],"y":[], "z":[], "t":[]], attitudeData: ["pitch":[],"roll":[], "yaw":[], "t":[]])
     }
 }

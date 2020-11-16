@@ -114,17 +114,32 @@ extension ViewController: WCSessionDelegate{
                 func addNewData(dictionaryKey:String){
                     let newData = message[dictionaryKey] as? [String:[Double]]
                     var currentData = self.exerciseData![dictionaryKey] as? [String:[Double]]
-                    for element in (newData!["x"])!{
-                        currentData?["x"]?.append(element)
-                    }
-                    for element in (newData?["y"])!{
-                        currentData?["y"]?.append(element)
-                    }
-                    for element in (newData?["z"])!{
-                        currentData?["z"]?.append(element)
-                    }
-                    for element in (newData?["t"])!{
-                        currentData?["t"]?.append(element)
+                    if (dictionaryKey == "attitudeData"){
+                        for element in (newData!["pitch"])!{
+                            currentData?["ptich"]?.append(element)
+                        }
+                        for element in (newData?["yaw"])!{
+                            currentData?["yaw"]?.append(element)
+                        }
+                        for element in (newData?["yaw"])!{
+                            currentData?[" yaw"]?.append(element)
+                        }
+                        for element in (newData?["t"])!{
+                            currentData?["t"]?.append(element)
+                        }
+                    }else {
+                        for element in (newData!["x"])!{
+                            currentData?["x"]?.append(element)
+                        }
+                        for element in (newData?["y"])!{
+                            currentData?["y"]?.append(element)
+                        }
+                        for element in (newData?["z"])!{
+                            currentData?["z"]?.append(element)
+                        }
+                        for element in (newData?["t"])!{
+                            currentData?["t"]?.append(element)
+                        }
                     }
                     self.exerciseData![dictionaryKey] = currentData
                 }
@@ -133,6 +148,9 @@ extension ViewController: WCSessionDelegate{
                     if self.exerciseData != nil {
                         self.exerciseData?["date"] = date
                         addNewData(dictionaryKey: "accelData")
+                        addNewData(dictionaryKey: "gravityData")
+                        addNewData(dictionaryKey: "rotationData")
+                        addNewData(dictionaryKey: "attitudeData")
                     } else {
                         self.exerciseData = message
                     }
@@ -156,7 +174,9 @@ extension ViewController: WCSessionDelegate{
                     print("no date")
                     if self.exerciseData != nil{
                         addNewData(dictionaryKey: "accelData")
-                        
+                        addNewData(dictionaryKey: "gravityData")
+                        addNewData(dictionaryKey: "rotationData")
+                        addNewData(dictionaryKey: "attitudeData")
                         
                     } else{
                         self.exerciseData = message
