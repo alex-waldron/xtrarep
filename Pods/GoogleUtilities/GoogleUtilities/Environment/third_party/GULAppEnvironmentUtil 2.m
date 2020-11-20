@@ -272,11 +272,10 @@ static BOOL HasEmbeddedMobileProvision() {
 #if TARGET_OS_MACCATALYST
   applePlatform = @"maccatalyst";
 #elif TARGET_OS_IOS
+
 #if defined(__IPHONE_14_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 140000
   if (@available(iOS 14.0, *)) {
-    // Early iOS 14 betas do not include isiOSAppOnMac (#6969)
-    applePlatform = ([[NSProcessInfo processInfo] respondsToSelector:@selector(isiOSAppOnMac)] &&
-                      [NSProcessInfo processInfo].isiOSAppOnMac) ? @"ios_on_mac" : @"ios";
+    applePlatform = [NSProcessInfo processInfo].isiOSAppOnMac ? @"ios_on_mac" : @"ios";
   } else {
     applePlatform = @"ios";
   }
