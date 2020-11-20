@@ -58,7 +58,7 @@ class WatchBrain{
                 self.exerciseData.attitudeData["pitch"]?.append(data.attitude.pitch)
                 self.exerciseData.attitudeData["roll"]?.append(data.attitude.roll)
                 self.exerciseData.attitudeData["yaw"]?.append(data.attitude.yaw)
-                self.exerciseData.rotationData["t"]?.append(time)
+                self.exerciseData.attitudeData["t"]?.append(time)
                 time += updateInterval
                 if self.count > 400 {
                     self.delegate?.sendDataToiOS()
@@ -86,7 +86,7 @@ class WatchBrain{
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateStyle = .short
-        formatter.timeStyle = .none
+        formatter.timeStyle = .short
         let datetime = formatter.string(from: date)
         return datetime
     }

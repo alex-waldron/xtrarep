@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextfield: UITextField!
     
+    @IBOutlet weak var isolationMode: UISwitch!
+    
     @IBOutlet weak var passwordTextfield: UITextField!
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -41,6 +43,14 @@ class LoginViewController: UIViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? ViewController{
+            vc.userEmail = emailTextfield.text
+            if (isolationMode.isOn){
+                vc.workoutCondition = "isolatedWorkouts"
+            } else{
+                vc.workoutCondition = "workouts"
+            }
+        }
      }
      
     

@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     var i = 0
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var errorLabel: UILabel!
+    var userEmail:String? = nil
+    var workoutCondition = "workouts"
     
     var pastExercises: [String] = []
     
@@ -154,7 +156,7 @@ extension ViewController: WCSessionDelegate{
                     } else {
                         self.exerciseData = message
                     }
-                    let workoutRef = self.db.collection("awaldron12@outlook.comNEW").document("workouts").collection(self.exerciseData?["exerciseType"] as! String)
+                    let workoutRef = self.db.collection(self.userEmail!).document(self.workoutCondition).collection(self.exerciseData?["exerciseType"] as! String)
                     workoutRef.addDocument(data: self.exerciseData!) { (error) in
                         if let e = error {
                             self.errorLabel.text = e.localizedDescription
